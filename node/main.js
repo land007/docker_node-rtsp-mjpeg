@@ -15,6 +15,7 @@ server.listen(port, function(){
 var CAMLIST = (process.env['CAMLIST'] || 'rtsp://admin:Admin123@192.168.0.241:554/h264/ch1/main/av_stream').split(',');
 var WH =  process.env['WH'] || '1024x576';
 var QUALITY =  process.env['QUALITY'] || 3;
+var RATE =  process.env['RATE'] || 10;
 
 //var cams = [
 //		'rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov'
@@ -23,7 +24,12 @@ var QUALITY =  process.env['QUALITY'] || 3;
 //	].map(function(uri, i) {
 //		var stream = new rtsp.FFMpeg({input: uri, resolution: '320x240', quality: 3});
 var cams = CAMLIST.map(function(uri, i) {
-		var stream = new rtsp.FFMpeg({input: uri, resolution: WH, quality: 3});
+		var stream = new rtsp.FFMpeg({
+		    input: uri // stream uri
+		        , rate: RATE // output framerate (optional)
+		        , resolution: WH // output resolution in WxH format (optional)
+		        , quality: QUALITY // JPEG compression quality level (optional)
+		      });
 		stream.on('start', function() {
 			console.log('stream ' + i + ' started');
 		});
