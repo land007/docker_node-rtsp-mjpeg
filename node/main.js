@@ -14,6 +14,7 @@ server.listen(port, function(){
 
 var CAMLIST = (process.env['CAMLIST'] || 'rtsp://admin:Admin123@192.168.0.241:554/h264/ch1/main/av_stream').split(',');
 var WH =  process.env['WH'] || '1024x576';
+var QUALITY =  process.env['QUALITY'] || 3;
 
 //var cams = [
 //		'rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov'
