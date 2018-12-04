@@ -31,7 +31,8 @@
 				html += '<option value="/cam' + i + '">Cam ' + i + '</option>';
 			}
 			html += '</select>';
-			html += '<img style="height: 668px;">';
+// 			html += '<img style="height: 668px;">';
+			html += '<img>';
 			div.innerHTML = html;
 			var image = div.getElementsByTagName('img')[0], select = div.getElementsByTagName('select')[0];
 			select.onchange = function() {
