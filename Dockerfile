@@ -1,4 +1,4 @@
-FROM land007/node:latest
+FROM land007/node-ffmpeg:latest
 
 MAINTAINER Yiqiu Jia <yiqiujia@hotmail.com>
 
