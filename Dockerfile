@@ -4,7 +4,6 @@ MAINTAINER Yiqiu Jia <yiqiujia@hotmail.com>
 
 #RUN . $HOME/.nvm/nvm.sh && npm install rtsp-ffmpeg
 
-#RUN ln -s $HOME/.nvm/versions/node/$SHIPPABLE_NODE_VERSION/lib/node_modules /node_
 # Define working directory.
 #RUN mkdir /node
 ADD node /node_
