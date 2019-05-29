@@ -15,8 +15,10 @@ ENV WH=1024x576
 ENV QUALITY=3
 ENV RATE=15
 
-RUN echo $(date "+%Y-%m-%d_%H:%M:%S") >> /.image_time
-RUN echo "land007/node-rtsp-mjpeg" >> /.image_name
+RUN echo $(date "+%Y-%m-%d_%H:%M:%S") >> /.image_times
+RUN echo $(date "+%Y-%m-%d_%H:%M:%S") > /.image_time
+RUN echo "land007/node-rtsp-mjpeg" >> /.image_names
+RUN echo "land007/node-rtsp-mjpeg" > /.image_name
 
 
 #docker push registry.eyecool.cn:5080/node-rtsp-mjpeg:latest
